@@ -1,10 +1,10 @@
 package calculator;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class StringCalculatorTest {
     private StringCalculator stringCalculator;
@@ -15,10 +15,22 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void basicSeparator() {
+    public void basicSeparator1() {
         assertThat(0).isEqualTo(stringCalculator.add(""));
+    }
+
+    @Test
+    public void basicSeparator2() {
         assertThat(3).isEqualTo(stringCalculator.add("1,2"));
+    }
+
+    @Test
+    public void basicSeparator3() {
         assertThat(6).isEqualTo(stringCalculator.add("1,2,3"));
+    }
+
+    @Test
+    public void basicSeparator4() {
         assertThat(6).isEqualTo(stringCalculator.add("1,2:3"));
     }
 
