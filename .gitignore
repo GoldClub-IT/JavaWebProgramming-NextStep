@@ -13,7 +13,6 @@ log/
 # --- Gradle specific ---
 .gradle/
 build/
-!gradle-wrapper.jar
 **/build/
 
 # --- IntelliJ IDEA specific ---
