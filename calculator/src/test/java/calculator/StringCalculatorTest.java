@@ -15,32 +15,32 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void basicSeparator1() {
+    public void add_blank() {
         assertThat(0).isEqualTo(stringCalculator.add(""));
     }
 
     @Test
-    public void basicSeparator2() {
-        assertThat(3).isEqualTo(stringCalculator.add("1,2"));
+    public void add_oneNumber() {
+        assertThat(1).isEqualTo(stringCalculator.add("1"));
     }
 
     @Test
-    public void basicSeparator3() {
+    public void add_comma() {
         assertThat(6).isEqualTo(stringCalculator.add("1,2,3"));
     }
 
     @Test
-    public void basicSeparator4() {
+    public void add_commaAndColon() {
         assertThat(6).isEqualTo(stringCalculator.add("1,2:3"));
     }
 
     @Test
-    public void customSeparator() {
+    public void add_customDelimiter() {
         assertThat(6).isEqualTo(stringCalculator.add("//;\n1;2;3"));
     }
 
     @Test
-    public void negativeNumber() {
+    public void add_negative() {
         assertThatThrownBy(() -> stringCalculator.add("-1,-2"))
                 .isInstanceOf(RuntimeException.class);
     }
